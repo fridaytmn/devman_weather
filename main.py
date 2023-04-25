@@ -1,33 +1,22 @@
 import requests
 
 
-def show_weather_in_london():
-    url = 'https://wttr.in/london?nTqu&lang=en'
-    try:
-        response = requests.get(url)
+def show_weather(cities: dict):
+    url = 'http://wttr.in/'
+    for city in cities.keys():
+        response = requests.get(f'{url}{city}', params=cities[city]['params'])
         response.raise_for_status()
         print(response.text)
-    except:
-        print('Weather is not avilible')
 
-def show_weather_in_svo():
-    url = 'https://wttr.in/svo?nTqmM&lang=en'
+def main():
+    cities = {'London': {'params': {'nTqu': '', 'lang': 'en'}},
+              'svo': {'params': {'nTqm': '', 'lang': 'ru'}},
+              'Череповец': {'params': {'nTqm': '', 'lang': 'ru'}}
+              }
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        print(response.text)
-    except:
-        print('Weather is not avilible')
+        show_weather(cities)
+    except requests.exceptions.ConnectionError:
+        'Weather is not avilible'
 
-def show_weather_in_cherepovec():
-    try:
-        url = 'https://wttr.in/Череповец?nTqmM&lang=ru'
-        response = requests.get(url)
-        response.raise_for_status()
-        print(response.text)
-    except:
-        print('Weather is not avilible')
-    
-show_weather_in_london()
-show_weather_in_svo()
-show_weather_in_cherepovec()
+if __name__ == '__main__':
+    main()
