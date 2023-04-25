@@ -8,6 +8,7 @@ def show_weather(cities: dict):
         response.raise_for_status()
         print(response.text)
 
+        
 def main():
     cities = {'London': {'params': {'nTqu': '', 'lang': 'en'}},
               'svo': {'params': {'nTqm': '', 'lang': 'ru'}},
@@ -18,5 +19,6 @@ def main():
     except requests.exceptions.ConnectionError:
         'Weather is not avilible'
 
+        
 if __name__ == '__main__':
     main()
