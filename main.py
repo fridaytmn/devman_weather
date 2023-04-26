@@ -17,7 +17,7 @@ def main():
     try:
         show_weather(cities)
     except requests.exceptions.ConnectionError:
-        'Weather is not avilible'
+        print('Weather is not avilible')
 
         
 if __name__ == '__main__':
