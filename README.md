@@ -7,6 +7,12 @@ The script uses the API of the wttr.in Web service. The locations are easily edi
 ## How to install
 You need Python 3 to execute this script. If Python 3 is not yet installed then download it from http://www.python.org for your operating system and install.
 
+After install Python on your PC need use command
+
+```sh
+pip install requirements.txt
+```
+
 ## How to launch
 
 ```sh
