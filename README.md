@@ -10,7 +10,7 @@ You need Python 3 to execute this script. If Python 3 is not yet installed then 
 After install Python on your PC need use command
 
 ```sh
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## How to launch
