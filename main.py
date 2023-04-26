@@ -10,9 +10,9 @@ def show_weather(cities: dict):
 
         
 def main():
-    cities = {'London': {'params': {'nTqu': '', 'lang': 'en'}},
-              'svo': {'params': {'nTqm': '', 'lang': 'ru'}},
-              'Череповец': {'params': {'nTqm': '', 'lang': 'ru'}}
+    cities = {'London': {'params': {'nTqM': '', 'lang': 'ru'}},
+              'svo': {'params': {'nTqM': '', 'lang': 'ru'}},
+              'Череповец': {'params': {'nTqM': '', 'lang': 'ru'}}
               }
     try:
         show_weather(cities)
